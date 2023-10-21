@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.selection {
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  color: white;
+  background-color: #007BFF;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn.selected {
+  background-color: #5cb85c;
+}
+
+.result {
+  margin-bottom: 20px;
+}
+
+.result p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#result_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#result_table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}

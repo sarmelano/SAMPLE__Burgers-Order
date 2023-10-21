@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/common.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Создай свой гамбургер</h1>
+    
+    <div class="selection">
+      <h2>Выберите размер:</h2>
+      <button id="size_small" class="btn">Маленький (50T)</button>
+      <button id="size_large" class="btn">Большой (100T)</button>
+    </div>
+    
+    <div class="selection">
+      <h2>Выберите начинку:</h2>
+      <button id="stuffing_cheese" class="btn">Сыр (10T)</button>
+      <button id="stuffing_salad" class="btn">Салат (20T)</button>
+      <button id="stuffing_potato" class="btn">Картофель (15T)</button>
+    </div>
+    
+    <div class="selection">
+      <h2>Добавки:</h2>
+      <button id="topping_mayo" class="btn">Майонез (20T)</button>
+      <button id="topping_sauce" class="btn">Приправа (15T)</button>
+    </div>
+    
+    <div class="result">
+      <h2>Ваш гамбургер:</h2>
+      <table id="result_table">
+        <tr>
+          <td>Цена:</td>
+          <td id="price"></td>
+        </tr>
+        <tr>
+          <td>Калории:</td>
+          <td id="calories"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
