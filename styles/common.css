@@ -29,6 +29,12 @@ body {
   background-color: #5cb85c;
 }
 
+#size_small.selected,
+#size_large.selected {
+  background-color: rgb(8, 95, 27);
+  border-radius: 30px;
+}
+
 .result {
   margin-bottom: 20px;
 }
