@@ -27,6 +27,6 @@ function resetHamburger() {
 function resetToppingCount() {
   topping_mayo_count = 0;
   topping_sauce_count = 0;
-  document.getElementById('topping_mayo').textContent = 'Майонез (20T)';
-  document.getElementById('topping_sauce').textContent = 'Приправа (15T)';
+  document.getElementById('topping_mayo').textContent = 'Mayo (20T)';
+  document.getElementById('topping_sauce').textContent = 'Salt&Paper (15T)';
 }

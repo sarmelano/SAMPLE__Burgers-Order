@@ -56,7 +56,7 @@ buttons.forEach(button => {
         button.classList.add('selected');
         break;
     }
-    document.getElementById('price').textContent = hamburger.calculatePrice() + " (T)монет";
-    document.getElementById('calories').textContent = hamburger.calculateCalories() + " калл";
+    document.getElementById('price').textContent = hamburger.calculatePrice() + " (T)coins";
+    document.getElementById('calories').textContent = hamburger.calculateCalories() + " callories";
   });
 });
