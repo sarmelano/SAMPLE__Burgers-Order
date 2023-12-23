@@ -53,3 +53,7 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
 }
+
+.nothing {
+  background-color: transparent;
+}
