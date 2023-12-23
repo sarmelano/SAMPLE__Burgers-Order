@@ -1,3 +1,4 @@
+// Static properties
 Hamburger.SIZE_SMALL = { price: 50, calories: 20 };
 Hamburger.SIZE_LARGE = { price: 100, calories: 40 };
 Hamburger.STUFFING_CHEESE = { price: 10, calories: 20 };
@@ -6,66 +7,48 @@ Hamburger.STUFFING_POTATO = { price: 15, calories: 10 };
 Hamburger.TOPPING_MAYO = { price: 20, calories: 5 };
 Hamburger.TOPPING_SAUCE = { price: 15, calories: 0 };
 
+// Initial hamburger setup
 let hamburger = new Hamburger(Hamburger.SIZE_SMALL);
 let topping_mayo_count = 0;
 let topping_sauce_count = 0;
 
+// Event delegation for the container
 const selectionContainer = document.querySelector('.container');
 
 selectionContainer.addEventListener('click', event => {
   const button = event.target.closest('.btn');
   if (!button) return;
 
-  let buttonPrefix;
-  switch (button.id) {
-    case 'size_small':
-    case 'size_large':
-      buttonPrefix = 'size';
-      break;
-    case 'stuffing_cheese':
-    case 'stuffing_salad':
-    case 'stuffing_potato':
-      buttonPrefix = 'stuffing';
-      break;
-    case 'topping_mayo':
-    case 'topping_sauce':
-      buttonPrefix = 'topping';
-      break;
-  }
+  // Determine the group of the button clicked
+  const group = button.dataset.group;
 
-  if (buttonPrefix) {
-    deselectButtons(buttonPrefix);
-    button.classList.add('selected');
-  }
+  // Deselect other buttons in the same group
+  deselectButtons(group);
 
+  // Apply the selected class to the clicked button
+  button.classList.add('selected');
+
+  // Perform action based on the button id
   switch (button.id) {
     case 'size_small':
       hamburger = new Hamburger(Hamburger.SIZE_SMALL);
-      selectButton(button);
       resetToppingCount();
       break;
     case 'size_large':
       hamburger = new Hamburger(Hamburger.SIZE_LARGE);
-      selectButton(button);
-      resetToppingCount()
+      resetToppingCount();
       break;
     case 'stuffing_cheese':
       hamburger.stuffing = Hamburger.STUFFING_CHEESE;
-      selectButton(button);
-      resetToppingCount()
-
+      resetToppingCount();
       break;
     case 'stuffing_salad':
       hamburger.stuffing = Hamburger.STUFFING_SALAD;
-      selectButton(button);
-      resetToppingCount()
-
+      resetToppingCount();
       break;
     case 'stuffing_potato':
       hamburger.stuffing = Hamburger.STUFFING_POTATO;
-      selectButton(button);
-      resetToppingCount()
-
+      resetToppingCount();
       break;
     case 'topping_mayo':
       hamburger.addTopping(Hamburger.TOPPING_MAYO);
@@ -79,5 +62,6 @@ selectionContainer.addEventListener('click', event => {
       break;
   }
 
+  // Update the display with the new price and calories
   updateDisplay();
 });
